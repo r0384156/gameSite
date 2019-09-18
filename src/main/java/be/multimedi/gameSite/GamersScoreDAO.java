@@ -25,10 +25,12 @@ public class GamersScoreDAO {
                 while (rs.next()) {
                     gamersScores.add(new GamersScore(rs.getInt("id"),
                             rs.getString("gamersVoornaam"),
-                            rs.getString("gamersNaam"),
+                            rs.getString("gamersAchternaam"),
                             rs.getInt("gamersScore"),
-                            rs.getDate("GamersDatum")));
+                            rs.getDate("gamersDatum"),
+                            rs.getString("gamersPlaytime")));
                 }
+                System.out.println("hh");
             } catch (SQLException se) {
                 System.out.println("Could not execute Query");
             }

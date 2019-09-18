@@ -9,11 +9,21 @@ public class GamersScore {
     private String gamersNaam;
     private int gamersScore;
     private Date gamersDatum;
+    private String gamersPlaytime;
 
     // Constructor zonder automatisch ontwikkelde waarden
     public GamersScore(String gamersVoornaam, String gamersNaam) {
         this.gamersVoornaam = gamersVoornaam;
         this.gamersNaam = gamersNaam;
+    }
+
+    public GamersScore(int id, String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum, String gamersPlaytime) {
+        this.id = id;
+        this.gamersVoornaam = gamersVoornaam;
+        this.gamersNaam = gamersNaam;
+        this.gamersScore = gamersScore;
+        this.gamersDatum = gamersDatum;
+        this.gamersPlaytime = gamersPlaytime;
     }
 
     // Volledige constructor

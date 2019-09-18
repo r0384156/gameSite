@@ -31,5 +31,10 @@
         </p>
     </article>
 </main>
+<canvas width='300' height='600'></canvas>
+<script src='js/tetris.js'></script>
+<script src='js/controller.js'></script>
+<script src='js/render.js'></script>
+
 </body>
 </html>

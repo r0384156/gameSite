@@ -83,3 +83,14 @@ table, th, td, tr {
 	border: 1px solid black;
 	font-size: 20px;
 }
+
+/* Css code for Tetris */
+canvas {
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.card {
+    background-color: #BBBBFF;
+}

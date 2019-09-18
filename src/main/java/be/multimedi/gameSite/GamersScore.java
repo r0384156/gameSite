@@ -35,16 +35,7 @@ public class GamersScore {
         this.gamersPlaytime = gamersPlaytime;
     }
 
-    // Volledige constructor
-    public GamersScore(int id, String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum) {
-        this (gamersVoornaam, gamersNaam);
-        this.id = id;
-        this.gamersScore = gamersScore;
-        this.gamersDatum = gamersDatum;
-    }
     // Getters
-
-
     public int getId() {
         return id;
     }

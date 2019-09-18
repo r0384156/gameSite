@@ -12,7 +12,7 @@ public class GamersScoreDAO {
     private static final String login = "javaeeheverlee";
     private static final String pwd = "j@v@eeheverlee2019";
     private static final String sqlGetAllGamersScore = "SELECT * FROM GamersScore";
-    private static final String sqlAddHighscore = "INSERT INTO GamersScore(gamersVoornaam, gamersNaam, gamersScore, gamersDatum, gamersPlaytime) " +
+    private static final String sqlAddHighscore = "INSERT INTO GamersScore(gamersVoornaam, gamersAchternaam, gamersScore, gamersDatum, gamersPlaytime) " +
             "VALUES(?,?,?,?,?)";
 
     public List<GamersScore> getAllHighscores() {
@@ -28,7 +28,7 @@ public class GamersScoreDAO {
                             rs.getString("gamersAchternaam"),
                             rs.getInt("gamersScore"),
                             rs.getDate("gamersDatum"),
-                            rs.getString("gamersPlaytime")));
+                            rs.getFloat("gamersPlaytime")));
                 }
             } catch (SQLException se) {
                 System.out.println("Could not execute Query");
@@ -75,7 +75,7 @@ public class GamersScoreDAO {
                 stmt.setString(2, gamersScore.getGamersNaam());
                 stmt.setInt(3, highscore);
                 stmt.setDate(4, Date.valueOf(date));
-                stmt.setFloat(5, (rondetijd + " sec"));
+                stmt.setFloat(5, rondetijd);
                 int result = stmt.executeUpdate();
                 System.out.println("Updated " + result + " rows");
             }catch (SQLException e){

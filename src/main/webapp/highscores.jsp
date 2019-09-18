@@ -30,26 +30,27 @@
         <table>
             <thead>
             <tr>
-                <td>name</td>
-                <td>weight</td>
-                <td>length</td>
-                <td>notes</td>
+                <td>    </td>
+                <td>voornaam</td>
+                <td>naam</td>
+                <td>score</td>
+                <td>playtime</td>
+                <td>datum</td>
             </tr>
             </thead>
             <tbody>
             <%for(GamersScore s : (ArrayList<GamersScore>)request.getAttribute("lijst")){ int i=0;%>
             <tr>
-                <td id="testName<%=i%>"><%= s.getName()%></td>
-                <td id="testWeight<%=i%>"><%= s.getWeight()%>kg</td>
-                <td id="testLength<%=i%>"><%= s.getLength()%>cm</td>
-                <td id="testNotes<%=i%>"><%= s.getNotes()%></td>
+                <td id="testId<%=i%>"><%= s.getId()%></td>
+                <td id="testName<%=i%>"><%= s.getGamersVoornaam()%></td>
+                <td id="testWeight<%=i%>"><%= s.getGamersNaam()%>kg</td>
+                <td id="testLength<%=i%>"><%= s.getGamersScore()%>cm</td>
+                <td id="testNotes<%=i%>"><%= s.getGamersPlaytime()%></td>
+                <td id="testNotes<%=i%>"><%= s.getGamersDatum()%></td>
             </tr>
             <%i++;} %>
             </tbody>
         </table>
-        <p>
-            <a href="ArmorySubmission.jsp">Submit new sword</a>
-        </p>
     </article>
 </main>
 </body>

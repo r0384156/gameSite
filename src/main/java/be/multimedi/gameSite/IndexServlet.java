@@ -26,9 +26,9 @@ public class IndexServlet extends HttpServlet {
         //super.doGet(req, resp);
         String page=req.getParameter("page");
         if(page!=null&&page.equals("table")) {
-            req.getRequestDispatcher("index.jsp").forward(req, resp);
+            req.getRequestDispatcher("highscores.jsp").forward(req, resp);
         }else {
-            req.getRequestDispatcher("ArmoryHome.jsp").forward(req, resp);
+            req.getRequestDispatcher("index.jsp").forward(req, resp);
         }
 
     }

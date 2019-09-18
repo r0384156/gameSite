@@ -14,11 +14,10 @@
 </head>
 <body>
 <header>
-    <img src="images/swordrack.jpg" alt="" />
     <nav>
         <ul>
             <li><a href="IndexServlet?page=home">Home</a></li>
-            <li><a href="IndexServlet?page=table">Highscores</a></li>
+            <li><a href="IndexServlet?page=highscores">Highscores</a></li>
             <li><a href="ArmorySubmission.jsp">Submit your own</a></li>
         </ul>
     </nav>
@@ -29,7 +28,7 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ea facilis officia quibusdam voluptate. Assumenda facere libero praesentium saepe. Ad architecto aut, dolorum facere facilis necessitatibus quam rerum sed sint?
         </p>
         <p>
-            <a href="IndexServlet?page=table">Go to highscores</a>
+            <a href="IndexServlet?page=highscores">Go to highscores</a>
         </p>
     </article>
 </main>

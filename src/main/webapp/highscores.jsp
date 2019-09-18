@@ -39,7 +39,7 @@
             </tr>
             </thead>
             <tbody>
-            <%for(GamersScore s : (ArrayList<GamersScore>)request.getAttribute("lijst")){ int i=0;%>
+            <%for(GamersScore s : (ArrayList<GamersScore>)request.getAttribute("lijst")){%>
             <tr>
                 <td><%= s.getId()%></td>
                 <td><%= s.getGamersVoornaam()%></td>
@@ -48,7 +48,7 @@
                 <td><%= s.getGamersPlaytime()%></td>
                 <td><%= s.getGamersDatum()%></td>
             </tr>
-            <%i++;} %>
+            <% } %>
             </tbody>
         </table>
     </article>

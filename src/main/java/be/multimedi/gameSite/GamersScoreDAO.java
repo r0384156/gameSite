@@ -67,15 +67,15 @@ public class GamersScoreDAO {
 //        }
 //    }
 
-    public void addHighscore (GamersScore gamersScore, int highscore, float rondetijd){
+    public void addHighscore (GamersScore gamersScore){
         LocalDate date = LocalDate.now();
         try (Connection con = DriverManager.getConnection(url, login, pwd)) {
             try(PreparedStatement stmt = con.prepareStatement(sqlAddHighscore)){
                 stmt.setString(1, gamersScore.getGamersVoornaam());
                 stmt.setString(2, gamersScore.getGamersNaam());
-                stmt.setInt(3, highscore);
+                stmt.setInt(3, gamersScore.getGamersScore());
                 stmt.setDate(4, Date.valueOf(date));
-                stmt.setFloat(5, rondetijd);
+                stmt.setFloat(5, gamersScore.getGamersPlaytime());
                 int result = stmt.executeUpdate();
                 System.out.println("Updated " + result + " rows");
             }catch (SQLException e){

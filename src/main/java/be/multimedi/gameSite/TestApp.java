@@ -1,5 +1,7 @@
 package be.multimedi.gameSite;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class TestApp {
@@ -13,17 +15,15 @@ public class TestApp {
         }
 
         // test voorbeeld gamers
-        GamersScore gamer1 = new GamersScore("Bert", "Wandelseck");
-        GamersScore gamer2 = new GamersScore("Jan", "Mast");
-
-        // test addHighscores
         float tempTijd = 30;
         int tempHighscore = 350;
-        gsdao.addHighscore(gamer1, tempHighscore, tempTijd);
-        tempTijd++;
-        tempHighscore++;
+        GamersScore gamer1 = new GamersScore("Bert", "Wandelseck", tempHighscore++, Date.valueOf(LocalDate.now()), tempTijd++);
+        GamersScore gamer2 = new GamersScore("Jan", "Mast", tempHighscore, Date.valueOf(LocalDate.now()), tempTijd);
+
+        // test addHighscores
+        gsdao.addHighscore(gamer1);
         System.out.println("Highscore toegevoegd voor : " + gamer1.getGamersVoornaam() + " " + gamer1.getGamersNaam());
-        gsdao.addHighscore(gamer2, tempHighscore, tempTijd);
+        gsdao.addHighscore(gamer2);
         System.out.println("Highscore toegevoegd voor : " + gamer2.getGamersVoornaam() + " " + gamer2.getGamersNaam());
     }
 }

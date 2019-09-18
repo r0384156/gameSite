@@ -9,10 +9,10 @@ public class GamersScore {
     private String gamersNaam;
     private int gamersScore;
     private Date gamersDatum;
-    private String gamersPlaytime;
+    private float gamersPlaytime;
 
     // Constructor met alles zonder ID
-    public GamersScore(String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum, String gamersPlaytime) {
+    public GamersScore(String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum, float gamersPlaytime) {
         this.gamersVoornaam = gamersVoornaam;
         this.gamersNaam = gamersNaam;
         this.gamersScore = gamersScore;
@@ -26,7 +26,7 @@ public class GamersScore {
         this.gamersNaam = gamersNaam;
     }
 
-    public GamersScore(int id, String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum, String gamersPlaytime) {
+    public GamersScore(int id, String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum, float gamersPlaytime) {
         this.id = id;
         this.gamersVoornaam = gamersVoornaam;
         this.gamersNaam = gamersNaam;
@@ -41,6 +41,32 @@ public class GamersScore {
         this.id = id;
         this.gamersScore = gamersScore;
         this.gamersDatum = gamersDatum;
+    }
+    // Getters
+
+
+    public int getId() {
+        return id;
+    }
+
+    public Date getGamersDatum() {
+        return gamersDatum;
+    }
+
+    public int getGamersScore() {
+        return gamersScore;
+    }
+
+    public String getGamersNaam() {
+        return gamersNaam;
+    }
+
+    public String getGamersVoornaam() {
+        return gamersVoornaam;
+    }
+
+    public float getGamersPlaytime() {
+        return gamersPlaytime;
     }
 
     // Setters (zonder ID)

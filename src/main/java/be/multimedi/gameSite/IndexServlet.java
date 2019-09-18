@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 
 //@WebServlet(name="Greeting", value = "/Greeting", initParams = @WebInitParam(name = "text", value = "Overschrijving van gegevens?"))
 public class IndexServlet extends HttpServlet {
@@ -31,5 +32,23 @@ public class IndexServlet extends HttpServlet {
             req.getRequestDispatcher("index.jsp").forward(req, resp);
         }
 
+    }
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     *      response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+            String voornaam = request.getParameter("voornaam");
+            String achternaam = request.getParameter("achternaam");
+            try {
+                int score = Integer.parseInt(request.getParameter("highscore"));
+                int playtime = Integer.parseInt(request.getParameter("length"));
+            //new GamersScoreDAO().addHighscore(new GamersScore(voornaam, achternaam, score, LocalDate.now(),playtime));
+            request.getRequestDispatcher("highscores.jsp").forward(request, response);
+            }catch(NumberFormatException nfe){
+                System.out.println("incorrect input");
+            }
     }
 }

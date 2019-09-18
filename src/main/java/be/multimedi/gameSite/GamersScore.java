@@ -2,7 +2,7 @@ package be.multimedi.gameSite;
 
 import java.util.Date;
 
-public class Gamers {
+public class GamersScore {
     // Variabelen
     private int id;
     private String gamersVoornaam;
@@ -11,13 +11,13 @@ public class Gamers {
     private Date gamersDatum;
 
     // Constructor zonder automatisch ontwikkelde waarden
-    public Gamers(String gamersVoornaam, String gamersNaam) {
+    public GamersScore(String gamersVoornaam, String gamersNaam) {
         this.gamersVoornaam = gamersVoornaam;
         this.gamersNaam = gamersNaam;
     }
 
     // Volledige constructor
-    public Gamers(int id, String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum) {
+    public GamersScore(int id, String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum) {
         this (gamersVoornaam, gamersNaam);
         this.id = id;
         this.gamersScore = gamersScore;
@@ -39,5 +39,18 @@ public class Gamers {
 
     public void setGamersDatum(Date gamersDatum) {
         this.gamersDatum = gamersDatum;
+    }
+
+    // To String Methode
+
+    @Override
+    public String toString() {
+        return "Gamers{" +
+                "id=" + id +
+                ", gamersVoornaam='" + gamersVoornaam + '\'' +
+                ", gamersNaam='" + gamersNaam + '\'' +
+                ", gamersScore=" + gamersScore +
+                ", gamersDatum=" + gamersDatum +
+                '}';
     }
 }

@@ -19,9 +19,7 @@ public class IndexServlet extends HttpServlet {
         if(page!=null&&page.equals("highscores")) {
             GamersScoreDAO gsdao = new GamersScoreDAO();
             List<GamersScore> highscoreLijst = gsdao.getAllHighscores();
-            for(GamersScore s : highscoreLijst){
-                System.out.println(s.toString());
-            }
+            
             req.setAttribute("lijst", highscoreLijst);
             req.getRequestDispatcher("highscores.jsp").forward(req, resp);
         }else {

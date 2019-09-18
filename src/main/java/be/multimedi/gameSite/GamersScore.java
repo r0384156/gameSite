@@ -86,7 +86,7 @@ public class GamersScore {
         this.gamersDatum = gamersDatum;
     }
 
-    
+
 
     // To String Methode
     @Override

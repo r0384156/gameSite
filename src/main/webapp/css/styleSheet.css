@@ -1,0 +1,85 @@
+@CHARSET "ISO-8859-1";
+
+
+/*
+header HTML
+*/
+html{
+    font-family: sans-serif;
+}
+body{
+    background-color: #FFFFFF;
+    margin-left: 5%;
+    margin-right: 5%
+}
+header img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 25%;
+	width: 25%;
+}
+header{
+    background-color: #000000;;
+}
+header nav{
+    background-color: #7D4A00;
+}
+header ul{
+    font-size: 2em;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+header  li a{
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+}
+header li a:hover, #active:hover, a:focus, #active:focus{
+    background-color: #AAAAAA;
+}
+header #active{
+    background-color: #995A00;
+}
+/*
+main
+*/
+main {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+main h2 {
+    font-size: 1.75em;
+    margin-bottom: 0.5em;
+}
+
+main p {
+    margin-left: 5%;
+}
+
+main ul {
+    list-style-type: none;
+}
+
+main textarea {
+    margin-left: 5%;
+    width: 90%;
+    height: auto;
+}
+
+
+
+body {
+	background-color: #aba870;
+}
+
+table, th, td, tr {
+	text-align: center;
+	border: 1px solid black;
+	font-size: 20px;
+}

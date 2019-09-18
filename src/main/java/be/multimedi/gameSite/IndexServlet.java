@@ -24,21 +24,12 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.doGet(req, resp);
-        System.out.println("Hello Greeting World!");
-
-        resp.setContentType("text/html");
-        resp.setCharacterEncoding("UTF-8");
-
-        try(PrintWriter out = resp.getWriter()){
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Greetings</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("hello everybody!");
-            out.println("</body>");
-            out.println("</html>");
+        String page=req.getParameter("page");
+        if(page!=null&&page.equals("highscores")) {
+            req.getRequestDispatcher("highscores.jsp").forward(req, resp);
+        }else {
+            req.getRequestDispatcher("index.jsp").forward(req, resp);
         }
+
     }
 }

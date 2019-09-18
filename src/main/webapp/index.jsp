@@ -18,7 +18,6 @@
         <ul>
             <li><a href="IndexServlet?page=home">Home</a></li>
             <li><a href="IndexServlet?page=highscores">Highscores</a></li>
-            <li><a href="ArmorySubmission.jsp">Submit your own</a></li>
         </ul>
     </nav>
 </header>

@@ -30,7 +30,6 @@ public class GamersScoreDAO {
                             rs.getDate("gamersDatum"),
                             rs.getString("gamersPlaytime")));
                 }
-                System.out.println("hh");
             } catch (SQLException se) {
                 System.out.println("Could not execute Query");
             }

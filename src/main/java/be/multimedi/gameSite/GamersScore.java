@@ -11,6 +11,15 @@ public class GamersScore {
     private Date gamersDatum;
     private String gamersPlaytime;
 
+    // Constructor met alles zonder ID
+    public GamersScore(String gamersVoornaam, String gamersNaam, int gamersScore, Date gamersDatum, String gamersPlaytime) {
+        this.gamersVoornaam = gamersVoornaam;
+        this.gamersNaam = gamersNaam;
+        this.gamersScore = gamersScore;
+        this.gamersDatum = gamersDatum;
+        this.gamersPlaytime = gamersPlaytime;
+    }
+
     // Constructor zonder automatisch ontwikkelde waarden
     public GamersScore(String gamersVoornaam, String gamersNaam) {
         this.gamersVoornaam = gamersVoornaam;

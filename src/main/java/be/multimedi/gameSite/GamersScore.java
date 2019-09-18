@@ -86,8 +86,24 @@ public class GamersScore {
         this.gamersDatum = gamersDatum;
     }
 
-    // To String Methode
+    // Getters
+    public String getGamersVoornaam() {
+        return gamersVoornaam;
+    }
 
+    public String getGamersNaam() {
+        return gamersNaam;
+    }
+
+    public int getGamersScore() {
+        return gamersScore;
+    }
+
+    public String getGamersPlaytime() {
+        return gamersPlaytime;
+    }
+
+    // To String Methode
     @Override
     public String toString() {
         return "Gamers{" +

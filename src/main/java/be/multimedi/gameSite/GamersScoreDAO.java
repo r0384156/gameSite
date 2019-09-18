@@ -40,21 +40,42 @@ public class GamersScoreDAO {
         return gamersScores;
     }
 
-    public void addHighscore(float rondetijd, int highscore){
-        Scanner keyboard = new Scanner(System.in);
+//    public void addHighscore(float rondetijd, int highscore){
+//        Scanner keyboard = new Scanner(System.in);
+//        LocalDate date = LocalDate.now();
+//        LocalTime time = LocalTime.now();
+//        System.out.println("Wat is je voornaam: ");
+//        String tempVoornaam = keyboard.nextLine();
+//        System.out.println("Wat is je achternaam: ");
+//        String tempNaam = keyboard.nextLine();
+//        try (Connection con = DriverManager.getConnection(url, login, pwd)) {
+//            try(PreparedStatement stmt = con.prepareStatement(sqlAddHighscore)){
+//                stmt.setString(1, tempVoornaam);
+//                stmt.setString(2, tempNaam);
+//                stmt.setInt(3, highscore);
+//                stmt.setDate(4, Date.valueOf(date));
+//                stmt.setString(6, (rondetijd + " sec"));
+//                int result = stmt.executeUpdate();
+//                System.out.println("Updated " + result + " rows");
+//            }catch (SQLException e){
+//                System.out.println("Highscore toevoegen is mislukt");
+//                System.out.println(e);
+//            }
+//        } catch (SQLException e) {
+//            System.out.println("verbinding is mislukt");
+//            System.out.println(e);
+//        }
+//    }
+
+    public void addHighscore (GamersScore gamersScore, int highscore, float rondetijd){
         LocalDate date = LocalDate.now();
-        LocalTime time = LocalTime.now();
-        System.out.println("Wat is je voornaam: ");
-        String tempVoornaam = keyboard.nextLine();
-        System.out.println("Wat is je achternaam: ");
-        String tempNaam = keyboard.nextLine();
         try (Connection con = DriverManager.getConnection(url, login, pwd)) {
             try(PreparedStatement stmt = con.prepareStatement(sqlAddHighscore)){
-                stmt.setString(1, tempVoornaam);
-                stmt.setString(2, tempNaam);
+                stmt.setString(1, gamersScore.getGamersVoornaam());
+                stmt.setString(2, gamersScore.getGamersNaam());
                 stmt.setInt(3, highscore);
                 stmt.setDate(4, Date.valueOf(date));
-                stmt.setString(6, (rondetijd + " sec"));
+                stmt.setFloat(5, (rondetijd + " sec"));
                 int result = stmt.executeUpdate();
                 System.out.println("Updated " + result + " rows");
             }catch (SQLException e){
@@ -65,6 +86,7 @@ public class GamersScoreDAO {
             System.out.println("verbinding is mislukt");
             System.out.println(e);
         }
+
     }
 }
 

@@ -41,12 +41,12 @@
             <tbody>
             <%for(GamersScore s : (ArrayList<GamersScore>)request.getAttribute("lijst")){ int i=0;%>
             <tr>
-                <td id="testId<%=i%>"><%= s.getId()%></td>
-                <td id="testName<%=i%>"><%= s.getGamersVoornaam()%></td>
-                <td id="testWeight<%=i%>"><%= s.getGamersNaam()%>kg</td>
-                <td id="testLength<%=i%>"><%= s.getGamersScore()%>cm</td>
-                <td id="testNotes<%=i%>"><%= s.getGamersPlaytime()%></td>
-                <td id="testNotes<%=i%>"><%= s.getGamersDatum()%></td>
+                <td><%= s.getId()%></td>
+                <td><%= s.getGamersVoornaam()%></td>
+                <td><%= s.getGamersNaam()%></td>
+                <td><%= s.getGamersScore()%></td>
+                <td><%= s.getGamersPlaytime()%></td>
+                <td><%= s.getGamersDatum()%></td>
             </tr>
             <%i++;} %>
             </tbody>

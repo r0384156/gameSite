@@ -1,24 +1,29 @@
 package be.multimedi.gameSite;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class GamersScoreDAO {
     private static final String url = "jdbc:mariadb://noelvaes.eu/javaeeheverleeDB12";
     private static final String login = "javaeeheverlee";
     private static final String pwd = "j@v@eeheverlee2019";
     private static final String sqlGetAllGamersScore = "SELECT * FROM GamersScore";
+    private static final String sqlAddHighscore = "INSERT INTO GamersScore(gamersVoornaam, gamersNaam, gamersScore, gamersDatum, gamersPlaytime) " +
+            "VALUES(?,?,?,?,?)";
 
     public List<GamersScore> getAllHighscores() {
-        List<GamersScore> highscores = new ArrayList<>();
+        List<GamersScore> gamersScores = new ArrayList<>();
         try (Connection con = DriverManager.getConnection(url, login, pwd)) {
             try (Statement stmt = con.createStatement()) {
                 ResultSet rs = stmt.executeQuery(sqlGetAllGamersScore);
 
                 // Door de query gaan en printen
                 while (rs.next()) {
-                    highscores.add(new GamersScore(rs.getInt("id"),
+                    gamersScores.add(new GamersScore(rs.getInt("id"),
                             rs.getString("gamersVoornaam"),
                             rs.getString("gamersNaam"),
                             rs.getInt("gamersScore"),
@@ -30,7 +35,34 @@ public class GamersScoreDAO {
         } catch (SQLException se) {
             System.out.println("Connection failed");
         }
-        return highscores;
+        return gamersScores;
+    }
+
+    public void addHighscore(float rondetijd, int highscore){
+        Scanner keyboard = new Scanner(System.in);
+        LocalDate date = LocalDate.now();
+        LocalTime time = LocalTime.now();
+        System.out.println("Wat is je voornaam: ");
+        String tempVoornaam = keyboard.nextLine();
+        System.out.println("Wat is je achternaam: ");
+        String tempNaam = keyboard.nextLine();
+        try (Connection con = DriverManager.getConnection(url, login, pwd)) {
+            try(PreparedStatement stmt = con.prepareStatement(sqlAddHighscore)){
+                stmt.setString(1, tempVoornaam);
+                stmt.setString(2, tempNaam);
+                stmt.setInt(3, highscore);
+                stmt.setDate(4, Date.valueOf(date));
+                stmt.setString(6, (rondetijd + " sec"));
+                int result = stmt.executeUpdate();
+                System.out.println("Updated " + result + " rows");
+            }catch (SQLException e){
+                System.out.println("Highscore toevoegen is mislukt");
+                System.out.println(e);
+            }
+        } catch (SQLException e) {
+            System.out.println("verbinding is mislukt");
+            System.out.println(e);
+        }
     }
 }
 

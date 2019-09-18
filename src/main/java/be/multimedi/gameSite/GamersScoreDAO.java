@@ -34,6 +34,7 @@ public class GamersScoreDAO {
             }
         } catch (SQLException se) {
             System.out.println("Connection failed");
+            System.out.println(se);
         }
         return gamersScores;
     }

@@ -1,5 +1,5 @@
 <%@ page import="be.multimedi.gameSite.GamersScore" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Rombout
   Date: 18/09/2019
@@ -39,7 +39,8 @@
             </tr>
             </thead>
             <tbody>
-            <%for(GamersScore s : (ArrayList<GamersScore>)request.getAttribute("lijst")){%>
+
+            <%for(GamersScore s : (List<GamersScore>)request.getAttribute("lijst")){%>
             <tr>
                 <td><%= s.getId()%></td>
                 <td><%= s.getGamersVoornaam()%></td>

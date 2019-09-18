@@ -16,7 +16,7 @@ public class GamersScoreDAO {
             "VALUES(?,?,?,?,?)";
 
     public List<GamersScore> getAllHighscores() {
-        List<GamersScore> gamersScores = new ArrayList<>();
+        ArrayList<GamersScore> gamersScores = new ArrayList<>();
         try (Connection con = DriverManager.getConnection(url, login, pwd)) {
             try (Statement stmt = con.createStatement()) {
                 ResultSet rs = stmt.executeQuery(sqlGetAllGamersScore);
